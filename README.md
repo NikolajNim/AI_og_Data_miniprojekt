@@ -50,17 +50,18 @@ Kursusgang 2:
 Kursusgang 3:
     Opgave 1.
         Til denne opgave har jeg lavet et script, som kan findes her: https://github.com/NikolajNim/AI_og_Data_miniprojekt/blob/main/Kursusgang_3/opgave_1.py
-    
-    
-        
-        
-        
+        Det første der skal gøres i denne opgave, det er tage et gråskala billede og tilføje impulsiv støj/salt and pepper noise. Jeg har valgt at bruge det klassiske image processing billede lena.jpg.
+        For at tilføje denne støj, så lavede jeg en funktion som modtager billede og en noise_ratio som parametre. Grunden til noise_ratio parameteren er, at det gør det muligt at ændre volumen af støj nemt. Funktionen kan ses fra linje 5 til 19. Den udregner mængden af støjpunkter baseret på noise_ratio, og derefter bruger den et for-loop til at tilfældigt tilføje støj til billedet.
+        Den næste del af opgaven går ud på at implementere et middelværdisfilter, som bruger en kernal på 3x3. Dette filter skal da bruges på det støjfulde billede, for at prøve at reducere støjen, middelværdisfilteret bliver implementeret med en funktion på linje 21 til 22.
+        Efter middelværdisfilteret, så skal der implementeres et medianværdisfilter, som også skal bruges på det stæjfulde billede for at reducere støj. Funktionen til dette filter kan ses på linje 24 til 25.
+        Til sidst i scriptet bliver alle fire variationer af billedet vist. Det originale, det støjfulde, det middelværdisfilterede og det medianværdisfilterede. Og som man kan se, så virker medianfiltrering meget bedre i dette tilfælde til at fjerne støjen fra billedet.
 
-        
+    Opgave 2. 
+        Til denne opgave har jeg lavet et nyt script, som kan findes her: https://github.com/NikolajNim/AI_og_Data_miniprojekt/blob/main/Kursusgang_3/opgave_2.py
+        Til denne opgave har jeg igen brugt lena.jpg til at lave image processing. Jeg har lavet en funktion, som tager billedet, en mean og sigma som parameter til at tilføje gaussisk støj til billedet. Denne funktion kan ses på linje 4 til 8. Derefter lavede jeg de samme funktioner som i sidste opgave til middelværdisfilter og medianværdisfilter, disse funktioner kan ses på linje 10 til 11 og linje 13 til 14.
+        Outputtet af dette script viser så, i forhold til den tidligere opgave, at middelværdisfilteret og medianfilteret ikke har den største effekt på billedet med gaussisk støj. Der kan være flare årsager til dette. En af årsagerne kan f.eks være at kernalen ikke er stor nok til at udføre filtreringen.
 
-
-
-
+    Opgave 3.
         
     
 
