@@ -27,7 +27,32 @@ Kursusgang 1:
 
 Kursusgang 2:
 
-    Til denne Kursusgang skulle være lære om at arbejde med databaser med værktøjet SQL. Opgaveløsningen kan findes her: 
+    Til denne Kursusgang skulle være lære om at arbejde med databaser med værktøjet SQL. Opgaveløsningen kan findes her: https://github.com/NikolajNim/AI_og_Data_miniprojekt/blob/8508b3e104e90466484f0d832dc59667113c0269/Kursusgang_2/sql.py
+
+    Opgaven til denne kursusgang er delt op i 5 dele. Jeg skriver opgavens nr. og beskriver hvor i koden jeg har løst den.
+    
+    Opgave 1. Skriv et Python script der opretter en SQLite database ‘school.db’:
+         Opgaven bliver løst på linje 1 til 14, hvor først så importer jeg librariet sqlite3, derefter definerer jeg create_connection funktionen, som modtager en path som parameter. Denne funktion opretter forbindelse til databasen, som ligger i den path, men hvis der ikke er nogen database til at starte, så laver den en ny database. 
+
+    Opgave 2. Udvid scriptet til at oprette to tabeller ‘Students’ og ‘Courses’.
+        For at kunne løse denne opgave, så skal jeg definere en funktion, som kan tage fat i forbindelsen til databasen, også udføre nogle forespørgelser, som i SQL hedder queries. Denne funktion bliver defineret på linje 16 til 23 og hedder execute_query(). Derefter skal der laves queries, som er en slags ordre til databasen. Til denne opgave skal jeg lave 2 queries. En til at tilføje en student tabel, som skal indeholde deres student id, navn og major. Den anden query skal oprette en course tabel, som skal indeholde course id, course navn og instruktør. Student querien kan ses konstrueret på linje 25 til 30, og course querien er kontrueret på linje 32 til 37. Disse queries består af strenge, der indeholder keywords, som kan læses med SQL for at udføre forespørgelsen, i dette tilfælde er CREATE TABLE keywordet der bliver brugt. De er derefter smidt ind i execute_query() funktionen som parametre sammen med forbindelsen til databasen, dette kan ses på linje 82 og 83. Dette tilføjer tabellerne til databasen.
+
+    Opgave 3. Indsæt mindst 5 records i hver tabel:
+        For så at tilføje data til mine tabeller, så skal igen konstruere nogle queries, som skal executes med execute_query() funktionen. Disse queries bruger INSERT INTO keywordsne til at tilgå den tabel dataen skal ind i, og derefter skrive keywordet VALUES for selve de datapunkter der skal indsættes. Student datapunkter bliver oprettet i querien på linje 50 til 59, og querien for coursesne bliver oprettet på linje 60 til 69. til sidst bliver disse queries executet i execute_query() funktionen på linje 84 og 85.
+    
+    Opgave 4. Opret en tredje tabel ‘Enrollments’ der opretter relationer mellem Students og Course:
+        For at lave denne nye tabel, skal en ny query laves, som er magen til de tidligere, dog med den undtagelse, at når man vil oprette reletioner til andre tabeller, så skal man bruge andre keywords, som hedder FOREIGN KEY og REFERENCES, så man kan se at data punkt A i tabel A skal referere til datapunkt A i tabel B. Denne query der opretter denne tabel kan ses i linje 39 til 48. Jeg lavede også en query som tilføjer de forskellige datapunkter til enrollment tabellen i linje 71 til 80.
+    
+    Opgave 5. Lav forespørgsler (queries) der vælger alle kurser som en specific studerende er tilmeldt og vælger alle studerende der er tilmeldt et specifikt kursus:
+        For at løse disse 2 dele af opgave, så lavede jeg 2 funktioner, som kan i linje 89 til 100 og linje 108 til 119. I disse funktioner opretter queries der bruger keywordsne SELECT FROM til at tilgå enrollment tabellen for den information der er brug for.
+        Derefter får jeg funktioner til at retunere en liste af courses i en ene og en liste af studerende i den anden. Koden der gør alt dette kan ses fra linje 89 til 125.
+
+Kursusgang 3:
+    
+    
+    
+        
+        
         
 
         
