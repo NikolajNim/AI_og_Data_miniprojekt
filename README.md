@@ -48,7 +48,8 @@ Kursusgang 2:
         Derefter får jeg funktioner til at retunere en liste af courses i en ene og en liste af studerende i den anden. Koden der gør alt dette kan ses fra linje 89 til 125.
 
 Kursusgang 3:
-    
+    Opgave 1.
+        Til denne opgave har jeg lavet et script, som kan findes her: https://github.com/NikolajNim/AI_og_Data_miniprojekt/blob/main/Kursusgang_3/opgave_1.py
     
     
         
