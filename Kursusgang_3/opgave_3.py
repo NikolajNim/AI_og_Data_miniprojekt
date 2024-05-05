@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.decomposition import PCA, KernelPCA
+from sklearn.decomposition import PCA
 
 X, y = fetch_openml(data_id=41082, as_frame=False, return_X_y=True, parser='auto')
 X = MinMaxScaler().fit_transform(X)
@@ -32,35 +32,18 @@ def plot_digits(X, title):
 plot_digits(X_test, "Uncorrupted test images")
 plot_digits(X_test_noisy, f"Noisy test images\nMSE: {np.mean((X_test - X_test_noisy) ** 2):.2f}")
 
-pca = PCA(n_components=64, random_state=42)
-kernel_pca = KernelPCA(
-    n_components=400,
-    kernel="rbf",
-    gamma=1e-3,
-    fit_inverse_transform=True,
-    alpha=5e-3,
-    random_state=42,
-)
+pca = PCA(random_state=42)
 
 pca.fit(X_train_noisy)
-_ = kernel_pca.fit(X_train_noisy)
+print(pca.explained_variance_ratio_*100)
 
-X_reconstructed_kernel_pca = kernel_pca.inverse_transform(
-    kernel_pca.transform(X_test_noisy)
-)
-X_reconstructed_pca = pca.inverse_transform(pca.transform(X_test_noisy))
+pca_transformed = pca.transform(X_test_noisy)
 
-plot_digits(X_test, "Uncorrupted test images")
+X_reconstructed_pca = pca.inverse_transform(pca_transformed)
+
 plot_digits(
     X_reconstructed_pca,
     f"PCA reconstruction\nMSE: {np.mean((X_test - X_reconstructed_pca) ** 2):.2f}",
-)
-plot_digits(
-    X_reconstructed_kernel_pca,
-    (
-        "Kernel PCA reconstruction\n"
-        f"MSE: {np.mean((X_test - X_reconstructed_kernel_pca) ** 2):.2f}"
-    ),
 )
 
 plt.show()
