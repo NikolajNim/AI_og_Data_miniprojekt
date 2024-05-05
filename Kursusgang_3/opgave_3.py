@@ -32,7 +32,7 @@ def plot_digits(X, title):
 plot_digits(X_test, "Uncorrupted test images")
 plot_digits(X_test_noisy, f"Noisy test images\nMSE: {np.mean((X_test - X_test_noisy) ** 2):.2f}")
 
-pca = PCA(n_components=32, random_state=42)
+pca = PCA(n_components=64, random_state=42)
 kernel_pca = KernelPCA(
     n_components=400,
     kernel="rbf",
@@ -63,3 +63,4 @@ plot_digits(
     ),
 )
 
+plt.show()

@@ -62,6 +62,6 @@ Kursusgang 3:
         Outputtet af dette script viser så, i forhold til den tidligere opgave, at middelværdisfilteret og medianfilteret ikke har den største effekt på billedet med gaussisk støj. Der kan være flare årsager til dette. En af årsagerne kan f.eks være at kernalen ikke er stor nok til at udføre filtreringen.
 
     Opgave 3.
-        
+        Til denne opgave skal jeg følge en guide til at forstå hvordan PCA kan bruges til støjreduktion. Guiden har noget kode, som man skal bruge til dette. Koden kan ses her: 
     
 
